@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Prestamo de Auditorios BECL</title>
+        <link rel="icon" type="image/png" href="img/logo_ufps.png" />
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/ufps.min.css" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+    </head>
+    <body>
+        <header>
+            <img src="img/bannerBiblio.jpg" width="100%"></img>
+        </header><br><br>
+        <div class="ufps-container">
+            <div class="ufps-row">
+                <div class="ufps-col-mobile-12 ufps-col-netbook-12  ufps-text-center"> 
+                    <div class="titulo-login ufps-container-fluid"><h2>Préstamo de Auditorios</h2></div>
+                    <div class="ufps-row div-login">
+                        <div class="ufps-tab-container" id="tabs">
+                            <ul class="ufps-tabs">
+                                <li><a class="ufps-tab-links fa fa-university" onclick="openTab(event, 'tab1', 'tabs')">Auditorio BECL</a></li>
+                                <li><a class="ufps-tab-links fa fa-university" onclick="openTab(event, 'tab2', 'tabs')">Auditorio de Semilleros</a></li>
+                            </ul>
+                            <div id="tab1" class="ufps-tab-content"><br>
+                                <div style="font-size:17px">
+                                    <strong class="subrayado">Solicitudes de Prestamos Auditorio Eduardo Cote Lamus</strong>
+                                </div>
+                                <table id="prestamo_auditorio_tabla" class="display">
+                                    <thead>
+                                        <tr>
+                                            <th>ID de solicitud</th>
+                                            <th>Fecha solicitud</th>
+                                            <th>Titulo</th>
+                                            <th>Fecha de prestamo</th>
+                                            <th>Hora inicio</th>                                    
+                                            <th>Hora final</th>
+                                        </tr>
+                                    </thead>
+                                </table><br>
+                                <div style="font-size:17px">
+                                    <strong class="subrayado">Solicitudes Respondidas</strong>
+                                </div>
+                                <table id="auditorio_historico_tabla" class="display">
+                                    <thead>
+                                        <tr>
+                                            <th>ID de solicitud</th>
+                                            <th>Fecha solicitud</th>
+                                            <th>Titulo</th>
+                                            <th>Fecha de prestamo</th>
+                                            <th>Hora inicio</th>                                    
+                                            <th>Hora final</th>  
+                                            <th>Respuesta</th>                                              
+                                            <th>Fecha respuesta</th>                                         
+                                        </tr>
+                                    </thead>
+                                </table>
+                                <div><button onclick="prestar_auditorio_modal()" class='ufps-btn ufps-btn-green font-big'>Solicitar Auditorio</button></div>
+                            </div>
+                            <div id="tab2" class="ufps-tab-content"><br>
+                                <div style="font-size:17px">
+                                    <strong class="subrayado">Solicitudes de Prestamos Auditorio de Semilleros</strong>
+                                </div>
+                                <table id="prestamo_semillero_tabla" class="display">
+                                    <thead>
+                                        <tr>
+                                            <th>ID de solicitud</th>
+                                            <th>Fecha solicitud</th>
+                                            <th>Grupo o semillero</th>
+                                            <th>Fecha de prestamo</th>
+                                            <th>Hora inicio</th>                                    
+                                            <th>Hora final</th>                                            
+                                        </tr>
+                                    </thead>
+                                </table><br>
+                                <div style="font-size:17px">
+                                    <strong class="subrayado">Solicitudes Respondidas</strong>
+                                </div>
+                                <table id="semillero_historicos_tabla" class="display">
+                                    <thead>
+                                        <tr>
+                                            <th>ID de solicitud</th>
+                                            <th>Fecha solicitud</th>
+                                            <th>Grupo o semillero</th>
+                                            <th>Fecha de prestamo</th>
+                                            <th>Hora inicio</th>                                    
+                                            <th>Hora final</th>                                   
+                                            <th>Respuesta</th>                                               
+                                            <th>Fecha de respuesta</th>                                               
+                                        </tr>
+                                    </thead>
+                                </table>
+                                <div><button onclick="prestar_semillero_modal()" class='ufps-btn ufps-btn-green font-big'>Solicitar Auditorio de semilleros</button></div>
+                            </div>
+                        </div> 
+                    </div>
+                </div >
+            </div>
+        </div>
+        <div id="modal-prestamo-aditorio" class="ufps-modal">
+            <div class="ufps-modal-content">
+                <div class="ufps-modal-header ufps-modal-header-red">
+                    <span class="ufps-modal-close">×</span>
+                    <h2>Solicitar Auditorio Eduardo Cote Lamus</h2>
+                </div>
+                <div class="ufps-modal-body" id="">
+                    <div class="container">
+                        <div style="margin: 10px">Para solicitar el auditorio debe ingresar el siguiente formulario. <br>
+                            La respuesta a la solictud se realizará a través de este mismo medio.</div>
+                        <form action="" onsubmit="prestar_auditorio(); return false" >
+                            <div class="form-group">
+                                <label for="Título">Título del evento</label>
+                                <input type="text" class="form-control font-medium" id="titulo" aria-describedby="titulohelp" placeholder="Título del evento" required>
+                                <small id="titulohelp" class="form-text text-muted">Ingrese el título del evento</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="cantidadPersonas">Cantidad de personas</label>
+                                <input type="number" class="form-control font-medium" id="cantidadPersonas" aria-describedby="cantidad" placeholder="200" min="1" max="200" required>
+                                <small id="cantidad" class="form-text text-muted">Máximo 200 personas</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="fecha_prestamo">Fecha del evento</label>
+                                <input type="date" class="form-control font-medium" id="fecha_prestamo" aria-describedby="fecha_p" placeholder="" required>
+                                <small id="fecha_p" class="form-text text-muted">   Tenga en cuenta que debe pedirlo con 3 días de anticipación</small>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="hora_inicio">Hora en que inicia el evento</label>
+                                    <select class="form-control font-medium" id="hora_inicio">
+                                        <option>6:00</option>
+                                        <option>7:00</option>
+                                        <option>8:00</option>
+                                        <option>9:00</option>
+                                        <option>10:00</option>
+                                        <option>11:00</option>
+                                        <option>12:00</option>
+                                        <option>13:00</option>
+                                        <option>14:00</option>
+                                        <option>15:00</option>
+                                        <option>16:00</option>
+                                        <option>17:00</option>
+                                        <option>18:00</option>
+                                        <option>19:00</option>
+                                        <option>20:00</option>
+                                        <option>21:00</option>
+                                    </select>
+                                    <small id="fecha_p" class="form-text text-muted">Solo en horarios de atención de 6:00 a.m. a 10:00 p.m.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="hora_fin">Hora en que finaliza el evento y se entrega el auditorio</label>
+                                    <select class="form-control font-medium" id="hora_fin">                                        
+                                        <option>7:00</option>
+                                        <option>8:00</option>
+                                        <option>9:00</option>
+                                        <option>10:00</option>
+                                        <option>11:00</option>
+                                        <option>12:00</option>
+                                        <option>13:00</option>
+                                        <option>14:00</option>
+                                        <option>15:00</option>
+                                        <option>16:00</option>
+                                        <option>17:00</option>
+                                        <option>18:00</option>
+                                        <option>19:00</option>
+                                        <option>20:00</option>
+                                        <option>21:00</option>
+                                        <option>22:00</option>
+                                    </select>
+                                    <small id="fecha_p" class="form-text text-muted">Solo en horarios de atención de 6:00 a.m. a 10:00 p.m.</small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Seleccione los objetos que necesita del auditorio</label>
+                                <div class="container">
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Dos televisores Samsung Smart TV de 60 pulgadas" name="objeto">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Dos televisores Samsung Smart TV de 60´´
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Un video beam Marca Vivitek " name="objeto">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Un video beam Marca Vivitek 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Un estabilizador de 8 puertos " name="objeto">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Un estabilizador de 8 puertos 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Unidad Receptora de Sistema Profesional de sonido inalámbrico marca Pro DJ " name="objeto">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Unidad Receptora de Sistema Profesional de sonido inalámbrico marca Pro DJ 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Computador Portátil Lenovo Corel i7 con cargador y pila" name="objeto">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Computador Portátil Lenovo Corel i7 con cargador y pila
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Amplificador Profesional de Sonido Pro DJ ST2500B" name="objeto">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Amplificador Profesional de Sonido Pro DJ ST2500B
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Unidad HDMI SPLITTER V1.4 4K2K" name="objeto">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Unidad HDMI SPLITTER V1.4 4K2K
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Micrófono inalámbrico sin pilas marca Pro DJ" name="objeto">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Micrófono inalámbrico sin pilas marca Pro DJ
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Control Remoto video beam " name="objeto">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Control Remoto video beam  
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Control Remoto para paso de diapositivas marca TARGUS sin pila" name="objeto">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Control Remoto para paso de diapositivas marca TARGUS sin pila 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Telón de Proyección marca IG4 " name="objeto">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Telón de Proyección marca IG4 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Bocinas de techo (10 unidades) marca Pro DJ" name="objeto">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Bocinas de techo (10 unidades) marca Pro DJ
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Bocinas de Pared (2 unidades) marca Pro DJ" name="objeto">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Bocinas de Pared (2 unidades) marca Pro DJ
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="200 sillas" name="objeto">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            200 sillas
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono">Teléfono de contacto</label>
+                                <input type="number" class="form-control font-medium" id="telefono" aria-describedby="cantidad" placeholder="" required>
+                                <small id="cantidad" class="form-text text-muted">Puede ingresar teléfono celular o fijo</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="correo">Correo electrónico de contacto</label>
+                                <input type="email" class="form-control font-medium" id="correo" aria-describedby="cantidad" placeholder="" required>
+                                <small id="cantidad" class="form-text text-muted">Ingrese un correo de contacto</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="departamento">Departamento</label>
+                                <input type="text" class="form-control font-medium" id="departamento" aria-describedby="cantidad" placeholder="ejemplo: división de biblioteca" required>
+                                <small id="cantidad" class="form-text text-muted">Ingrese el departamento el cual hace la solicitud</small>
+                            </div>                            
+                            <div class="form-group">
+                                <label for="observaciones">Observaciones</label>
+                                <textarea class="form-control" id="observaciones" rows="4"></textarea>
+                                <small id="cantidad" class="form-text text-muted">Ingrese alguna observación o sugerencia sobre el prestamo del auditorio</small>
+                            </div>     
+                            <div class="ufps-text-center">
+                                <input type="submit" class="ufps-btn ufps-btn-green" value="PRESTAR AUDITORIO" >
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+                <div class="ufps-modal-footer">
+                    <h3>División de biblioteca</h3>
+                </div>
+            </div>
+        </div>
+        <div id="modal-prestamo-aditorio-detalle" class="ufps-modal">
+            <div class="ufps-modal-content">
+                <div class="ufps-modal-header ufps-modal-header-red">
+                    <span class="ufps-modal-close">×</span>
+                    <h2>Detalle de la Solicitud del Auditorio Eduardo Cote Lamus</h2>
+                </div>
+                <div class="ufps-modal-body" id="">
+                    <div class="container">
+                        <form action="" onsubmit="cancelarSolicitudA(); return false" >
+                            <div class="form-group">
+                                <label for="titulo_sa">ID de la solicitud</label>
+                                <input type="text" class="form-control font-medium" id="id_sa" aria-describedby="titulohelp" placeholder="Título del evento" required disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="titulo_sa">Título del evento</label>
+                                <input type="text" class="form-control font-medium" id="titulo_sa" aria-describedby="titulohelp" placeholder="Título del evento" required disabled>
+                                <small id="titulohelp" class="form-text text-muted">Ingrese el título del evento</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="cantidadPersonas">Cantidad de personas</label>
+                                <input type="number" class="form-control font-medium" id="cantidadPersonas_sa" aria-describedby="cantidad" placeholder="200" min="1" max="200" required disabled>
+                                <small id="cantidad" class="form-text text-muted">Máximo 200 personas</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="fecha_solicitud">Fecha de solicitud</label>
+                                <input type="text" class="form-control font-medium" id="fecha_solicitud_sa" aria-describedby="fecha_p" placeholder="" required disabled>
+                                <small id="fecha_p" class="form-text text-muted">   Tenga en cuenta que debe pedirlo con 3 días de anticipación</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="fecha_prestamo">Fecha del evento</label>
+                                <input type="text" class="form-control font-medium" id="fecha_prestamo_sa" aria-describedby="fecha_p" placeholder="" required disabled>
+                                <small id="fecha_p" class="form-text text-muted">   Tenga en cuenta que debe pedirlo con 3 días de anticipación</small>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="hora_inicio">Hora en que inicia el evento</label>
+                                    <input type="text" class="form-control font-medium" id="hora_inicio_sa" aria-describedby="titulohelp" placeholder="Título del evento" required disabled>
+                                    <small id="fecha_p" class="form-text text-muted">Solo en horarios de atención de 6:00 a.m. a 10:00 p.m.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="hora_fin">Hora en que finaliza el evento y se entrega el auditorio</label>
+                                    <input type="text" class="form-control font-medium" id="hora_fin_sa" aria-describedby="titulohelp" placeholder="Título del evento" required disabled>
+                                    <small id="fecha_p" class="form-text text-muted">Solo en horarios de atención de 6:00 a.m. a 10:00 p.m.</small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Objetos solicitados para el evento</label>
+                                <div class="container">
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Dos televisores Samsung Smart TV de 60 pulgadas" name="objeto_sa" disabled>
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Dos televisores Samsung Smart TV de 60´´
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Un video beam Marca Vivitek " name="objeto_sa" disabled>
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Un video beam Marca Vivitek 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Un estabilizador de 8 puertos " name="objeto_sa" disabled>
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Un estabilizador de 8 puertos 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Unidad Receptora de Sistema Profesional de sonido inalámbrico marca Pro DJ " name="objeto_sa" disabled>
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Unidad Receptora de Sistema Profesional de sonido inalámbrico marca Pro DJ 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Computador Portátil Lenovo Corel i7 con cargador y pila" name="objeto_sa" disabled>
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Computador Portátil Lenovo Corel i7 con cargador y pila
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Amplificador Profesional de Sonido Pro DJ ST2500B" name="objeto_sa" disabled>
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Amplificador Profesional de Sonido Pro DJ ST2500B
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Unidad HDMI SPLITTER V1.4 4K2K" name="objeto_sa" disabled>
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Unidad HDMI SPLITTER V1.4 4K2K
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Micrófono inalámbrico sin pilas marca Pro DJ" name="objeto_sa" disabled>
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Micrófono inalámbrico sin pilas marca Pro DJ
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Control Remoto video beam " name="objeto_sa" disabled>
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Control Remoto video beam  
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Control Remoto para paso de diapositivas marca TARGUS sin pila" name="objeto_sa" disabled>
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Control Remoto para paso de diapositivas marca TARGUS sin pila 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Telón de Proyección marca IG4 " name="objeto_sa" disabled>
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Telón de Proyección marca IG4 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Bocinas de techo (10 unidades) marca Pro DJ" name="objeto_sa" disabled>
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Bocinas de techo (10 unidades) marca Pro DJ
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Bocinas de Pared (2 unidades) marca Pro DJ" name="objeto_sa" disabled>
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Bocinas de Pared (2 unidades) marca Pro DJ
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="200 sillas" name="objeto_sa" disabled>
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            200 sillas
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono">Teléfono de contacto</label>
+                                <input type="number" class="form-control font-medium" id="telefono_sa" aria-describedby="cantidad" placeholder="" required disabled>
+                                <small id="cantidad" class="form-text text-muted">Puede ingresar teléfono celular o fijo</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="correo">Correo electrónico de contacto</label>
+                                <input type="email" class="form-control font-medium" id="correo_sa" aria-describedby="cantidad" placeholder="" required disabled>
+                                <small id="cantidad" class="form-text text-muted">Ingrese un correo de contacto</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="departamento">Departamento</label>
+                                <input type="text" class="form-control font-medium" id="departamento_sa" aria-describedby="cantidad" placeholder="ejemplo: división de biblioteca" required disabled>
+                                <small id="cantidad" class="form-text text-muted">Ingrese el departamento el cual hace la solicitud</small>
+                            </div>                            
+                            <div class="form-group">
+                                <label for="observaciones">observaciones</label>
+                                <textarea class="form-control" id="observaciones_sa" rows="4" disabled></textarea>
+                                <small id="cantidad" class="form-text text-muted">Ingrese alguna observación o sugerencia sobre el prestamo del auditorio</small>
+                            </div>     
+                            <div class="ufps-text-center">
+                                <input type="submit" class="ufps-btn " value="CANCELAR SOLICITUD" >
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+                <div class="ufps-modal-footer">
+                    <h3>División de biblioteca</h3>
+                </div>
+            </div>
+        </div>
+        <div id="modal-historico-aditorio-detalle" class="ufps-modal">
+            <div class="ufps-modal-content">
+                <div class="ufps-modal-header ufps-modal-header-red">
+                    <span class="ufps-modal-close">×</span>
+                    <h2>Detalle del Préstamo del Auditorio Eduardo Cote Lamus</h2>
+                </div>
+                <div class="ufps-modal-body" id="">
+                    <div class="container">
+                        <form action="" onsubmit=" return false" >
+                            <div class="form-group">
+                                <label for="titulo_sa">ID de la solicitud</label>
+                                <input type="text" class="form-control font-medium" id="id_pa" aria-describedby="titulohelp" placeholder="Título del evento" required disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="titulo_sa">Título del evento</label>
+                                <input type="text" class="form-control font-medium" id="titulo_pa" aria-describedby="titulohelp" placeholder="Título del evento" required disabled>
+                                <small id="titulohelp" class="form-text text-muted">Ingrese el título del evento</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="cantidadPersonas">Cantidad de personas</label>
+                                <input type="number" class="form-control font-medium" id="cantidadPersonas_pa" aria-describedby="cantidad" placeholder="200" min="1" max="200" required disabled>
+                                <small id="cantidad" class="form-text text-muted">Máximo 200 personas</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="fecha_solicitud">Fecha de solicitud</label>
+                                <input type="text" class="form-control font-medium" id="fecha_solicitud_pa" aria-describedby="fecha_p" placeholder="" required disabled>
+                                <small id="fecha_p" class="form-text text-muted">   Tenga en cuenta que debe pedirlo con 3 días de anticipación</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="fecha_prestamo">Fecha del evento</label>
+                                <input type="text" class="form-control font-medium" id="fecha_prestamo_pa" aria-describedby="fecha_p" placeholder="" required disabled>
+                                <small id="fecha_p" class="form-text text-muted">   Tenga en cuenta que debe pedirlo con 3 días de anticipación</small>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="hora_inicio">Hora en que inicia el evento</label>
+                                    <input type="text" class="form-control font-medium" id="hora_inicio_pa" aria-describedby="titulohelp" placeholder="Título del evento" required disabled>
+                                    <small id="fecha_p" class="form-text text-muted">Solo en horarios de atención de 6:00 a.m. a 10:00 p.m.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="hora_fin">Hora en que finaliza el evento y se entrega el auditorio</label>
+                                    <input type="text" class="form-control font-medium" id="hora_fin_pa" aria-describedby="titulohelp" placeholder="Título del evento" required disabled>
+                                    <small id="fecha_p" class="form-text text-muted">Solo en horarios de atención de 6:00 a.m. a 10:00 p.m.</small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Objetos solicitados para el evento</label>
+                                <div class="container">
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Dos televisores Samsung Smart TV de 60 pulgadas" name="objeto_pa" disabled>
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Dos televisores Samsung Smart TV de 60´´
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Un video beam Marca Vivitek " name="objeto_pa" disabled>
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Un video beam Marca Vivitek 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Un estabilizador de 8 puertos " name="objeto_pa" disabled>
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Un estabilizador de 8 puertos 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Unidad Receptora de Sistema Profesional de sonido inalámbrico marca Pro DJ " name="objeto_pa" disabled>
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Unidad Receptora de Sistema Profesional de sonido inalámbrico marca Pro DJ 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Computador Portátil Lenovo Corel i7 con cargador y pila" name="objeto_pa" disabled>
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Computador Portátil Lenovo Corel i7 con cargador y pila
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Amplificador Profesional de Sonido Pro DJ ST2500B" name="objeto_pa" disabled>
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Amplificador Profesional de Sonido Pro DJ ST2500B
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Unidad HDMI SPLITTER V1.4 4K2K" name="objeto_pa" disabled>
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Unidad HDMI SPLITTER V1.4 4K2K
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Micrófono inalámbrico sin pilas marca Pro DJ" name="objeto_pa" disabled>
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Micrófono inalámbrico sin pilas marca Pro DJ
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Control Remoto video beam " name="objeto_pa" disabled>
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Control Remoto video beam  
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Control Remoto para paso de diapositivas marca TARGUS sin pila" name="objeto_pa" disabled>
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Control Remoto para paso de diapositivas marca TARGUS sin pila 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Telón de Proyección marca IG4 " name="objeto_pa" disabled>
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Telón de Proyección marca IG4 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Bocinas de techo (10 unidades) marca Pro DJ" name="objeto_pa" disabled>
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Bocinas de techo (10 unidades) marca Pro DJ
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="Bocinas de Pared (2 unidades) marca Pro DJ" name="objeto_pa" disabled>
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Bocinas de Pared (2 unidades) marca Pro DJ
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="checkbox" value="200 sillas" name="objeto_pa" disabled>
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            200 sillas
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono">Teléfono de contacto</label>
+                                <input type="number" class="form-control font-medium" id="telefono_pa" aria-describedby="cantidad" placeholder="" required disabled>
+                                <small id="cantidad" class="form-text text-muted">Puede ingresar teléfono celular o fijo</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="correo">Correo electrónico de contacto</label>
+                                <input type="email" class="form-control font-medium" id="correo_pa" aria-describedby="cantidad" placeholder="" required disabled>
+                                <small id="cantidad" class="form-text text-muted">Ingrese un correo de contacto</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="departamento">Departamento</label>
+                                <input type="text" class="form-control font-medium" id="departamento_pa" aria-describedby="cantidad" placeholder="ejemplo: división de biblioteca" required disabled>
+                                <small id="cantidad" class="form-text text-muted">Ingrese el departamento el cual hace la solicitud</small>
+                            </div>                            
+                            <div class="form-group">
+                                <label for="observaciones">Observaciones de la solicitud</label>
+                                <textarea class="form-control" id="observaciones_prestamo_pa" rows="4" disabled></textarea>
+                            </div>  
+                            <div class="form-group">
+                                <label for="">Respuesta</label>
+                                <input type="text" class="form-control font-medium" id="respuesta_pa" aria-describedby="fecha_p" placeholder="" required disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="fecha_prestamo">Fecha en que se respondió la solicitud</label>
+                                <input type="text" class="form-control font-medium" id="fecha_respuesta_pa" aria-describedby="fecha_p" placeholder="" required disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="observaciones">Observaciones de la respuesta</label>
+                                <textarea class="form-control" id="observaciones_respuesta_pa" rows="4" disabled></textarea>
+                            </div> 
+                        </form>
+
+                    </div>
+                </div>
+                <div class="ufps-modal-footer">
+                    <h3>División de biblioteca</h3>
+                </div>
+            </div>
+        </div>
+        <div id="modal-prestamo-semillero" class="ufps-modal">
+            <div class="ufps-modal-content">
+                <div class="ufps-modal-header ufps-modal-header-red">
+                    <span class="ufps-modal-close">×</span>
+                    <h2>Solicitar Auditorio de Semilleros</h2>
+                </div>
+                <div class="ufps-modal-body" id="">
+                    <div class="container">
+                        <div style="margin: 10px">Para solicitar el auditorio de semilleros debe ingresar el siguiente formulario. <br>
+                            La respuesta a la solictud se realizará a través de este mismo medio.</div>
+                        <form action="" onsubmit="prestar_semillero(); return false" >
+                            <div class="form-group">
+                                <label for="grupo_semillero">Grupo ó semillero de investigación</label>
+                                <input type="text" class="form-control font-medium" id="grupo_semillero" aria-describedby="grupo_semillerohelp" placeholder="Grupo ó semillero de investigació" required>
+                                <small id="grupo_semillerohelp" class="form-text text-muted">Ingrese el grupo ó semillero de investigación</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="cantidadPersonas_s">Cantidad de personas</label>
+                                <input type="number" class="form-control font-medium" id="cantidadPersonas_s" aria-describedby="cantidad" placeholder="20" min="1" max="200" required>
+                                <small id="cantidad" class="form-text text-muted">Máximo 20 personas</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="fecha_prestamo_s">Fecha del evento</label>
+                                <input type="date" class="form-control font-medium" id="fecha_prestamo_s" aria-describedby="fecha_p" placeholder="" required>
+                                <small id="fecha_p" class="form-text text-muted">   Tenga en cuenta que debe pedirlo con 3 días de anticipación</small>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="hora_inicio_s">Hora en que inicia el evento</label>
+                                    <select class="form-control font-medium" id="hora_inicio_s">
+                                        <option>6:00</option>
+                                        <option>7:00</option>
+                                        <option>8:00</option>
+                                        <option>9:00</option>
+                                        <option>10:00</option>
+                                        <option>11:00</option>
+                                        <option>12:00</option>
+                                        <option>13:00</option>
+                                        <option>14:00</option>
+                                        <option>15:00</option>
+                                        <option>16:00</option>
+                                        <option>17:00</option>
+                                        <option>18:00</option>
+                                        <option>19:00</option>
+                                        <option>20:00</option>
+                                        <option>21:00</option>
+                                    </select>
+                                    <small id="fecha_p" class="form-text text-muted">Solo en horarios de atención de 6:00 a.m. a 10:00 p.m.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="hora_fin_s">Hora en que finaliza el evento y se entrega el auditorio</label>
+                                    <select class="form-control font-medium" id="hora_fin_s">                                        
+                                        <option>7:00</option>
+                                        <option>8:00</option>
+                                        <option>9:00</option>
+                                        <option>10:00</option>
+                                        <option>11:00</option>
+                                        <option>12:00</option>
+                                        <option>13:00</option>
+                                        <option>14:00</option>
+                                        <option>15:00</option>
+                                        <option>16:00</option>
+                                        <option>17:00</option>
+                                        <option>18:00</option>
+                                        <option>19:00</option>
+                                        <option>20:00</option>
+                                        <option>21:00</option>
+                                        <option>22:00</option>
+                                    </select>
+                                    <small id="fecha_p" class="form-text text-muted">Solo en horarios de atención de 6:00 a.m. a 10:00 p.m.</small>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="telefono_s">Teléfono de contacto</label>
+                                <input type="number" class="form-control font-medium" id="telefono_s" aria-describedby="cantidad" placeholder="" required>
+                                <small id="cantidad" class="form-text text-muted">Puede ingresar teléfono celular o fijo</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="correo_s">Correo electrónico de contacto</label>
+                                <input type="email" class="form-control font-medium" id="correo_s" aria-describedby="cantidad" placeholder="" required>
+                                <small id="cantidad" class="form-text text-muted">Puede ingresar teléfono celular o fijo</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="departamento_s">Departamento</label>
+                                <input type="text" class="form-control font-medium" id="departamento_s" aria-describedby="cantidad" placeholder="ejemplo: división de biblioteca" required>
+                                <small id="cantidad" class="form-text text-muted">Ingrese el departamento el cual hace la solicitud</small>
+                            </div>                            
+                            <div class="form-group">
+                                <label for="observaciones_s">Observaciones</label>
+                                <textarea class="form-control" id="observaciones_s" rows="4"></textarea>
+                                <small id="cantidad" class="form-text text-muted">Ingrese alguna observación o sugerencia sobre el prestamo del auditorio</small>
+                            </div>     
+                            <div class="ufps-text-center">
+                                <input type="submit" class="ufps-btn ufps-btn-green" value="PRESTAR AUDITORIO DE SEMILLEROS" >
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+                <div class="ufps-modal-footer">
+                    <h3>División de biblioteca</h3>
+                </div>
+            </div>
+        </div>
+        <div id="modal-prestamo-semillero-datalle" class="ufps-modal">
+            <div class="ufps-modal-content">
+                <div class="ufps-modal-header ufps-modal-header-red">
+                    <span class="ufps-modal-close">×</span>
+                    <h2>Solicitud de Auditorio de Semilleros</h2>
+                </div>
+                <div class="ufps-modal-body" id="">
+                    <div class="container">                        
+                        <form action="" onsubmit="cancelarSolicitudS(); return false" >
+                            <div class="form-group">
+                                <label for="id_ss">ID de la solicitud</label>
+                                <input type="number" class="form-control font-medium" id="id_ss" aria-describedby="cantidad" placeholder="" required disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="grupo_semillero">Grupo ó semillero de investigación</label>
+                                <input type="text" class="form-control font-medium" id="grupo_semillero_ss" aria-describedby="grupo_semillerohelp" placeholder="Grupo ó semillero de investigació" required disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="cantidadPersonas_s">Cantidad de personas</label>
+                                <input type="number" class="form-control font-medium" id="cantidadPersonas_ss" aria-describedby="cantidad" placeholder="20" min="1" max="200" required disabled>
+                                <small id="cantidad" class="form-text text-muted">Máximo 20 personas</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="fecha_prestamo_s">Fecha en que se realizó la solicitud</label>
+                                <input type="text" class="form-control font-medium" id="fecha_solicitud_ss" aria-describedby="fecha_p" placeholder="" required disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="fecha_prestamo_s">Fecha del evento</label>
+                                <input type="text" class="form-control font-medium" id="fecha_prestamo_ss" aria-describedby="fecha_p" placeholder="" required disabled>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="hora_inicio_ss">Hora en que inicia el evento</label>
+                                    <input type="text" class="form-control font-medium" id="hora_inicio_ss" aria-describedby="fecha_p" placeholder="" required disabled>
+                                    <small id="fecha_p" class="form-text text-muted">Solo en horarios de atención de 6:00 a.m. a 10:00 p.m.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="hora_fin_s">Hora en que finaliza el evento y se entrega el auditorio</label>
+                                    <input type="text" class="form-control font-medium" id="hora_fin_ss" aria-describedby="fecha_p" placeholder="" required disabled>
+                                    <small id="fecha_p" class="form-text text-muted">Solo en horarios de atención de 6:00 a.m. a 10:00 p.m.</small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono_s">Teléfono de contacto</label>
+                                <input type="number" class="form-control font-medium" id="telefono_ss" aria-describedby="cantidad" placeholder="" required disabled>
+                                <small id="cantidad" class="form-text text-muted">Puede ingresar teléfono celular o fijo</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="correo_s">Correo electrónico de contacto</label>
+                                <input type="email" class="form-control font-medium" id="correo_ss" aria-describedby="cantidad" placeholder="" required disabled>
+                                <small id="cantidad" class="form-text text-muted">Puede ingresar teléfono celular o fijo</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="departamento_s">Departamento</label>
+                                <input type="text" class="form-control font-medium" id="departamento_ss" aria-describedby="cantidad" placeholder="ejemplo: división de biblioteca" required disabled>
+                                <small id="cantidad" class="form-text text-muted">Ingrese el departamento el cual hace la solicitud</small>
+                            </div>                            
+                            <div class="form-group">
+                                <label for="observaciones_s">Observaciones</label>
+                                <textarea class="form-control" id="observaciones_ss" rows="4" disabled></textarea>
+                            </div>   
+                            <div class="ufps-text-center">
+                                <input type="submit" class="ufps-btn " value="CANCELAR SOLICITUD" >  
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+                <div class="ufps-modal-footer">
+                    <h3>División de biblioteca</h3>
+                </div>
+            </div>
+        </div>
+        <div id="modal-historico-semillero-datalle" class="ufps-modal">
+            <div class="ufps-modal-content">
+                <div class="ufps-modal-header ufps-modal-header-red">
+                    <span class="ufps-modal-close">×</span>
+                    <h2>Prestamo del Auditorio de Semilleros</h2>
+                </div>
+                <div class="ufps-modal-body" id="">
+                    <div class="container">                        
+                        <form action="" onsubmit="prestar_semillero(); return false" >
+                            <div class="form-group">
+                                <label for="id_ss">ID de la solicitud</label>
+                                <input type="number" class="form-control font-medium" id="id_ps" aria-describedby="cantidad" placeholder="" required disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="grupo_semillero">Grupo ó semillero de investigación</label>
+                                <input type="text" class="form-control font-medium" id="grupo_semillero_ps" aria-describedby="grupo_semillerohelp" placeholder="Grupo ó semillero de investigació" required disabled>
+                                <small id="grupo_semillerohelp" class="form-text text-muted">Ingrese el grupo ó semillero de investigación</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="cantidadPersonas_s">Cantidad de personas</label>
+                                <input type="number" class="form-control font-medium" id="cantidadPersonas_ps" aria-describedby="cantidad" placeholder="20" min="1" max="200" required disabled>
+                                <small id="cantidad" class="form-text text-muted">Máximo 20 personas</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="fecha_prestamo_s">Fecha en que se realizó la solicitud</label>
+                                <input type="text" class="form-control font-medium" id="fecha_solicitud_ps" aria-describedby="fecha_p" placeholder="" required disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="fecha_prestamo_s">Fecha del evento</label>
+                                <input type="text" class="form-control font-medium" id="fecha_prestamo_ps" aria-describedby="fecha_p" placeholder="" required disabled>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="hora_inicio_ss">Hora en que inicia el evento</label>
+                                    <input type="text" class="form-control font-medium" id="hora_inicio_ps" aria-describedby="fecha_p" placeholder="" required disabled>
+                                    <small id="fecha_p" class="form-text text-muted">Solo en horarios de atención de 6:00 a.m. a 10:00 p.m.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="hora_fin_s">Hora en que finaliza el evento y se entrega el auditorio</label>
+                                    <input type="text" class="form-control font-medium" id="hora_fin_ps" aria-describedby="fecha_p" placeholder="" required disabled>
+                                    <small id="fecha_p" class="form-text text-muted">Solo en horarios de atención de 6:00 a.m. a 10:00 p.m.</small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono_s">Teléfono de contacto</label>
+                                <input type="number" class="form-control font-medium" id="telefono_ps" aria-describedby="cantidad" placeholder="" required disabled>
+                                <small id="cantidad" class="form-text text-muted">Puede ingresar teléfono celular o fijo</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="correo_s">Correo electrónico de contacto</label>
+                                <input type="email" class="form-control font-medium" id="correo_ps" aria-describedby="cantidad" placeholder="" required disabled>
+                                <small id="cantidad" class="form-text text-muted">Puede ingresar teléfono celular o fijo</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="departamento_s">Departamento</label>
+                                <input type="text" class="form-control font-medium" id="departamento_ps" aria-describedby="cantidad" placeholder="ejemplo: división de biblioteca" required disabled>
+                                <small id="cantidad" class="form-text text-muted">Ingrese el departamento el cual hace la solicitud</small>
+                            </div>                            
+                            <div class="form-group">
+                                <label for="observaciones_s">Observaciones de la solicitud</label>
+                                <textarea class="form-control" id="observaciones_prestamo_ps" rows="4" disabled></textarea>
+                            </div>  
+                            
+                            <div class="form-group">
+                                <label for="">Respuesta de la solicitud</label>
+                                <input type="text" class="form-control font-medium" id="respuesta_ps" aria-describedby="fecha_p" placeholder="" required disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Fecha en que se respondió a la solicitud</label>
+                                <input type="text" class="form-control font-medium" id="fecha_respuesta_ps" aria-describedby="fecha_p" placeholder="" required disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="observaciones_s">Observaciones de la respuesta a la solicitud</label>
+                                <textarea class="form-control" id="observaciones_respuesta_ps" rows="4" disabled></textarea>
+                            </div>  
+                        </form>
+
+                    </div>
+                </div>
+                <div class="ufps-modal-footer">
+                    <h3>División de biblioteca</h3>
+                </div>
+            </div>
+        </div>
+    <center><input type="button" class="ufps-btn font-big" onclick="cerrarSesion() "value="CerrarSesion"></center>
+        <div class="ufps-footer">
+            <h3>Universidad Francisco de Paula Santander</h3>
+            <p>Biblioteca Eduardo Cote Lamus</p>
+            <p>Desarrollado por: Denis González & Alexis Quintero</p>
+        </div>
+
+        <script src="js/jquery-1.10.2.min.js"></script>
+        <script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js "></script >
+        <script src="js/alertNotificaciones.js"></script>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js">
+
+        </script>
+        <script src="js/ufps.min.js"></script>
+        <script src="js/procesar.js"></script>
+        <script src="js/procesarDocente.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script type="text/javascript">
+            autenticarDocente();
+        </script>
+    </body>
+</html>
+

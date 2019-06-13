@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" href="img/logo_ufps.png" />
+        <title>Prestamo de Auditorios BECL</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/ufps.min.css" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <img src="img/bannerBiblio.jpg" width="100%"></img>
+        </header><br><br>
+        <div class="ufps-container">
+            <div class="ufps-row">
+                <div class="ufps-col-mobile-12 ufps-col-netbook-6  ufps-text-center"> 
+                    <div class="titulo-login ufps-container-fluid"><h2>Iniciar Sesión</h2></div>
+                    <div class="ufps-row div-login">
+
+                        <div class="ufps-col-desktop-7">
+                            <form action="" onsubmit="IniciarSesion(); return false">
+                                <div class="form-group row">
+                                    <label class="font-big col-md-5 col-sm-12">Código</label>
+                                    <input type="text" id="codigo" class="form-control font-medium col-md-7 col-sm-12" required >
+                                </div>
+                                <div class="form-group row ">
+                                    <label class="font-big col-md-5 col-sm-12">Contraseña</label>
+                                    <input type="password" id="password" class="form-control font-medium col-md-7 col-sm-12" required>
+                                </div>
+                                <input type="submit" class="ufps-btn font-big" value="Ingresar">
+                            </form>
+
+                        </div>
+                        <div class="ufps-col-desktop-5 ufps-text-justify font-small">
+                            USUARIO: Es su código de docete.<br>
+                            CONTRASEÑA: Para obtener su contraseña debe comunicarse con el jefe de sistemas de la biblioteca.<br>
+
+                        </div>
+                    </div>
+                </div >
+                <div class="ufps-col-mobile-12 ufps-col-netbook-6  ufps-text-center"> 
+                    <div class="titulo-login ufps-container-fluid"><h2>¿Qué puedes hacer?</h2></div>
+                    <div class=" div-login">
+                        <div class="ufps-col-desktop-6 ufps-text-justify" >
+                            Al ingresar como docente puede solicitar el prestamo de auditorio
+                            de la biblioteca Eduardo Cote Lamus ó el Auditorio de semilleros
+                        </div>
+                        <div class="ufps-col-desktop-6">
+                            <img src="img/Misc-Stats-icon.png">
+                        </div>
+                    </div>
+                </div >
+            </div>
+        </div>
+        <br><br><br>
+        <div class="ufps-footer">
+            <h3>Universidad Francisco de Paula Santander</h3>
+            <p>Biblioteca Eduardo Cote Lamus</p>
+            <p>Desarrollado por: Denis González & Alexis Quintero</p>
+        </div>
+        <script src="js/jquery-1.10.2.min.js"></script>
+        <script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js "></script >
+        <script src="js/alertNotificaciones.js"></script>
+        <script src="js/ufps.min.js"></script>
+        <script src="js/procesar.js"></script>
+        <script src="js/bootstrap.js"></script>
+    </body>
+</html>
+

@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3a7f478e-5329-475c-b61a-5325fe49e715" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/negocio/controlador/Controlador.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6028">
+              <caret line="274" column="62" lean-forward="true" selection-start-line="274" selection-start-column="62" selection-end-line="274" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/negocio/dao/AuditorioDAO.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/negocio/procesar/procesar.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/negocio/conexion/Conexion.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="146">
+              <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>openTab</find>
+      <find>cerrar</find>
+      <find>html</find>
+      <find>validar</find>
+      <find>registrar</find>
+      <find>registrar_prestamo_auditorio</find>
+      <find>cancelar_a</find>
+      <find>cantidadPersona_s</find>
+      <find>cantidadPersonas_s</find>
+      <find>$dato</find>
+      <find>getre</find>
+      <find>notification</find>
+      <find>body</find>
+      <find>presta</find>
+      <find>cargarDetalleSolicitudAuditorio</find>
+      <find>auditorio_historico_tabla</find>
+      <find>opentab</find>
+      <find>listarSolicitudes</find>
+      <find>listarSolicitudesAuditorio</find>
+      <find>corre</find>
+      <find>prestamo_auditorio_tabla</find>
+      <find>ufps-tab-links</find>
+      <find>ufps</find>
+      <find>ufps-ta</find>
+      <find>ufps-tab-</find>
+      <find>ufps-tab</find>
+      <find>ul.ufps-tabs li a</find>
+      <find>university</find>
+      <find>cerrarSesion</find>
+      <find>Enviar</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/negocio/conexion/Conexion.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/js/ufps.js" />
+        <option value="$PROJECT_DIR$/js/bootstrap.js" />
+        <option value="$PROJECT_DIR$/administrador.php" />
+        <option value="$PROJECT_DIR$/docente.php" />
+        <option value="$PROJECT_DIR$/css/ufps.min.css" />
+        <option value="$PROJECT_DIR$/negocio/dao/AuditorioDAO.php" />
+        <option value="$PROJECT_DIR$/negocio/dao/SemilleroDAO.php" />
+        <option value="$PROJECT_DIR$/negocio/dto/AuditorioDTO.php" />
+        <option value="$PROJECT_DIR$/negocio/dto/SemilleroDTO.php" />
+        <option value="$PROJECT_DIR$/negocio/procesar/ProcesarDocente.php" />
+        <option value="$PROJECT_DIR$/negocio/procesar/ProcesarAdministrador.php" />
+        <option value="$PROJECT_DIR$/js/procesar.js" />
+        <option value="$PROJECT_DIR$/css/font-awesome.css" />
+        <option value="$PROJECT_DIR$/js/procesarAdministrador.js" />
+        <option value="$PROJECT_DIR$/css/estadisticas.css" />
+        <option value="$PROJECT_DIR$/css/bootstrap.min.css" />
+        <option value="$PROJECT_DIR$/js/alert.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/administrador.html" />
+        <option value="$PROJECT_DIR$/negocio/util/Fecha.php" />
+        <option value="$PROJECT_DIR$/docente.html" />
+        <option value="$PROJECT_DIR$/js/procesarDocente.js" />
+        <option value="$PROJECT_DIR$/negocio/mail/Mail.php" />
+        <option value="$PROJECT_DIR$/negocio/dto/UsuarioDTO.php" />
+        <option value="$PROJECT_DIR$/negocio/dao/UsuarioDAO.php" />
+        <option value="$PROJECT_DIR$/negocio/procesar/procesar.php" />
+        <option value="$PROJECT_DIR$/negocio/controlador/Controlador.php" />
+        <option value="$PROJECT_DIR$/css/styles.css" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="687" />
+    <option name="y" value="20" />
+    <option name="width" value="669" />
+    <option name="height" value="688" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="auditorios" type="b2602c69:ProjectViewProjectNode" />
+              <item name="auditorios" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="auditorios" type="b2602c69:ProjectViewProjectNode" />
+              <item name="auditorios" type="462c0819:PsiDirectoryNode" />
+              <item name="negocio" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="auditorios" type="b2602c69:ProjectViewProjectNode" />
+              <item name="auditorios" type="462c0819:PsiDirectoryNode" />
+              <item name="negocio" type="462c0819:PsiDirectoryNode" />
+              <item name="procesar" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/auditorios/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3a7f478e-5329-475c-b61a-5325fe49e715" name="Default Changelist" comment="" />
+      <created>1553286212278</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1553286212278</updated>
+      <workItem from="1553286214181" duration="2358000" />
+      <workItem from="1553633803319" duration="591000" />
+      <workItem from="1553715797889" duration="167000" />
+      <workItem from="1556654329678" duration="2529000" />
+      <workItem from="1556725347362" duration="7971000" />
+      <workItem from="1557235380314" duration="671000" />
+      <workItem from="1557236375141" duration="1247000" />
+      <workItem from="1557263160316" duration="5665000" />
+      <workItem from="1557315210934" duration="3126000" />
+      <workItem from="1557321651123" duration="3009000" />
+      <workItem from="1557344271626" duration="7384000" />
+      <workItem from="1557353255341" duration="327000" />
+      <workItem from="1557354043578" duration="1727000" />
+      <workItem from="1557359592112" duration="8026000" />
+      <workItem from="1557407842968" duration="8511000" />
+      <workItem from="1557429486783" duration="6245000" />
+      <workItem from="1557753583016" duration="3810000" />
+      <workItem from="1557777692468" duration="4762000" />
+      <workItem from="1557783261500" duration="4999000" />
+      <workItem from="1557843188220" duration="3068000" />
+      <workItem from="1557862552601" duration="3723000" />
+      <workItem from="1557925317976" duration="8460000" />
+      <workItem from="1557948509158" duration="2933000" />
+      <workItem from="1558127107199" duration="232000" />
+      <workItem from="1558128184707" duration="1231000" />
+      <workItem from="1558212945919" duration="9150000" />
+      <workItem from="1558273657193" duration="3181000" />
+      <workItem from="1558297140455" duration="5100000" />
+      <workItem from="1558382337031" duration="3915000" />
+      <workItem from="1558449716161" duration="7181000" />
+      <workItem from="1558466356091" duration="12609000" />
+      <workItem from="1558484788302" duration="7478000" />
+      <workItem from="1558534456992" duration="3589000" />
+      <workItem from="1558554155590" duration="8929000" />
+      <workItem from="1558628050075" duration="2525000" />
+      <workItem from="1558641598525" duration="6915000" />
+      <workItem from="1558731332476" duration="3411000" />
+      <workItem from="1558735581254" duration="1915000" />
+      <workItem from="1558966767960" duration="715000" />
+      <workItem from="1558984932345" duration="3289000" />
+      <workItem from="1559057923297" duration="570000" />
+      <workItem from="1559064246209" duration="286000" />
+      <workItem from="1559075732264" duration="982000" />
+      <workItem from="1559077058375" duration="40000" />
+      <workItem from="1560194473355" duration="612000" />
+      <workItem from="1560196471752" duration="4773000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="179937000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17776097" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="0" />
+      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.32843137" />
+      <window_info anchor="bottom" id="Version Control" order="3" />
+      <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Find" order="6" weight="0.32843137" />
+      <window_info anchor="bottom" id="Run" order="7" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.39869282" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="right" id="Database" order="0" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/svg/tags.svg" />
+    <entry file="file://$PROJECT_DIR$/svg/target.svg" />
+    <entry file="file://$PROJECT_DIR$/svg/task.svg" />
+    <entry file="file://$PROJECT_DIR$/svg/terminal.svg" />
+    <entry file="file://$PROJECT_DIR$/svg/text.svg" />
+    <entry file="file://$PROJECT_DIR$/svg/thumb-down.svg" />
+    <entry file="file://$PROJECT_DIR$/svg/thumb-up.svg" />
+    <entry file="file://$PROJECT_DIR$/svg/transfer.svg" />
+    <entry file="file://$PROJECT_DIR$/svg/trash.svg" />
+    <entry file="file://$PROJECT_DIR$/svg/underline.svg" />
+    <entry file="file://$PROJECT_DIR$/svg/vertical-align-bottom.svg" />
+    <entry file="file://$PROJECT_DIR$/svg/vertical-align-center.svg" />
+    <entry file="file://$PROJECT_DIR$/svg/vertical-align-top.svg" />
+    <entry file="file://$PROJECT_DIR$/svg/volume-high.svg" />
+    <entry file="file://$PROJECT_DIR$/svg/volume-low.svg" />
+    <entry file="file://$PROJECT_DIR$/svg/warning.svg" />
+    <entry file="file://$PROJECT_DIR$/svg/wifi.svg" />
+    <entry file="file://$PROJECT_DIR$/svg/wrench.svg" />
+    <entry file="file://$PROJECT_DIR$/svg/x.svg" />
+    <entry file="file://$PROJECT_DIR$/svg/yen.svg" />
+    <entry file="file://$PROJECT_DIR$/svg/zoom-in.svg" />
+    <entry file="file://$PROJECT_DIR$/svg/zoom-out.svg" />
+    <entry file="file://$PROJECT_DIR$/svg/video.svg" />
+    <entry file="file://$PROJECT_DIR$/css/badge.svg" />
+    <entry file="file://$PROJECT_DIR$/svg/home.svg" />
+    <entry file="file://$PROJECT_DIR$/css/font-awesome.css" />
+    <entry file="file://$PROJECT_DIR$/css/ufps.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/estadisticas.css" />
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/sectional.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/ufps.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="15550" selection-start-column="15550" selection-end-column="15550" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="5" column="51738" selection-start-line="5" selection-start-column="51732" selection-end-line="5" selection-end-column="51738" />
+          <folding>
+            <element signature="e#61909#62109#2" expanded="true" />
+            <element signature="e#62317#62466#2" expanded="true" />
+            <element signature="e#62968#63114#2" expanded="true" />
+            <element signature="e#63415#63581#1" expanded="true" />
+            <element signature="e#74301#74544#2" expanded="true" />
+            <element signature="e#75411#75660#2" expanded="true" />
+            <element signature="e#101957#102147#2" expanded="true" />
+            <element signature="e#102193#102383#2" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/procesarAdministrador.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10164">
+          <caret line="48" column="48" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/negocio/procesar/ProcesarAdministrador.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2010" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/alert.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="44" column="54" selection-start-line="44" selection-start-column="54" selection-end-line="44" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/bannerBiblio.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/bannerBiblio2.png" />
+    <entry file="file://$PROJECT_DIR$/img/logo_ufps.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/negocio/util/Fecha.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="23" lean-forward="true" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/procesarDocente.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="97" column="11" selection-start-line="97" selection-start-column="11" selection-end-line="97" selection-end-column="11" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/negocio/mail/Mail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="28" column="24" lean-forward="true" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+          <folding>
+            <element signature="e#7#41#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docente.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="60" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/procesar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/administrador.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="125" column="15" selection-start-line="125" selection-start-column="15" selection-end-line="125" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/negocio/dto/UsuarioDTO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2090">
+          <caret line="99" column="5" lean-forward="true" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/negocio/dao/UsuarioDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="31" column="27" lean-forward="true" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/negocio/conexion/Conexion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/negocio/controlador/Controlador.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6028">
+          <caret line="274" column="62" lean-forward="true" selection-start-line="274" selection-start-column="62" selection-end-line="274" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/negocio/dao/AuditorioDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/negocio/procesar/procesar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

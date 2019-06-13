@@ -1,0 +1,15 @@
+Si desea cambiar el nombre de usuario y/o contraseña del administrador
+deberá dirigirse a la siguiente ruta:
+
+negocio/procesar/procesar.php 
+
+allí encontrara el método iniciarSesion() 
+en el cual se encuentran asignados los datos de nombre y contraseña.
+
+Para la configuracion de envio de e-mail
+deberá dirigirse a la siguiente ruta:
+
+negocio/mail/Mail.php
+
+alli podrá encontrar la variable $mail->Username (linea 19) en la cual va el correo del cual se envia los e-mail
+OJO: Este e-mail debera autorizar el acceso de terceros para su funcionamiento.
