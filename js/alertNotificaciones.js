@@ -23,7 +23,7 @@ function alertLogIn(msg) {
         setTimeout ( " location.href = '\administrador.html\'" , 1000 );
     }else{
         swal({
-            title: "¡¡Bienvenido!!",
+            title: "¡¡Bienvenido "+msg+"!!",
             text: " ",
             buttons: false,
             closeOnClickOutside: false,

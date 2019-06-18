@@ -12,6 +12,7 @@
  * @author Lenovo
  */
 class Conexion {
+
     private static $servername = "localhost";
     private static $username = "root";
     private static $password = "";

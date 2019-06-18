@@ -35,7 +35,7 @@ function iniciarSesion(){
     $usuario=$controlador->iniciarSesion($codigo, $pass);
     if($usuario!=null){   
         $_SESSION['usuario'] = $usuario;
-        return 'true';
+        return $usuario->getNombres();
     }
     return 'false';
 }
